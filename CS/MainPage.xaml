@@ -1,0 +1,25 @@
+﻿<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:dx="http://schemas.devexpress.com/maui"
+    xmlns:local="clr-namespace:TreeViewWithHierarchicalData"
+    BackgroundColor="{dx:ThemeColor Surface}"
+    x:Class="TreeViewApp.TreeViewPage">
+
+    <ContentPage.BindingContext>
+        <local:TreeViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid RowDefinitions="Auto, *, Auto">
+        <dx:DXTreeView 
+            x:Name="treeView"
+            Grid.Row="1"
+            ItemsSource="{Binding Nodes}" 
+            DisplayMember="Name"
+            AutoExpandMode="RootNodes" >
+            <dx:DXTreeView.TreeDescription>
+                <dx:HierarchyTreeDescription ChildNodeFieldName="Nodes"/>
+            </dx:DXTreeView.TreeDescription>
+        </dx:DXTreeView>
+    </Grid>
+</ContentPage>
