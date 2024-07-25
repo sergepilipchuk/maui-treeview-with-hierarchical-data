@@ -7,55 +7,60 @@ namespace TreeView.Data;
 public static class ReportLibraryData {
     public static ReportLibraryNode Generate() {
         var root = new ReportLibraryNode();
+        var orders = new ReportLibraryNode() { Name = "Orders" };
+        var customers = new ReportLibraryNode() { Name = "Customers" };
+        var employees = new ReportLibraryNode() { Name = "Employees" };
+        var marketResearch = new ReportLibraryNode() { Name = "Market Research" };
+        var barCodes = new ReportLibraryNode() { Name = "Bar Codes" };
+        var crossBand = new ReportLibraryNode() { Name = "Cross Band" };
+        var realLife = new ReportLibraryNode() { Name = "Real-Life" };
+        var products = new ReportLibraryNode() { Name = "Products" };
+        var sales = new ReportLibraryNode() { Name = "Sales" };
+        var northwindTraders = new ReportLibraryNode() { Name = "Northwind Traders" };
 
-        var customers = new ReportLibraryNode() { Name = "Customers", IsFolder = true };
-        var orders = new ReportLibraryNode() { Name = "Orders", IsFolder = true };
-        orders.AddNode(new ReportLibraryNode() { Name = "Detail.pdf", IsFolder = false });
-        orders.AddNode(new ReportLibraryNode() { Name = "Summary.pdf", IsFolder = false });
+        orders.AddNode(new ReportLibraryNode() { Name = "Detail.pdf" });
+        orders.AddNode(new ReportLibraryNode() { Name = "Summary.pdf" });
+        
         customers.AddNode(orders);
-        customers.AddNode(new ReportLibraryNode() { Name = "Balance sheet.pdf", IsFolder = false });
-        customers.AddNode(new ReportLibraryNode() { Name = "Revenue by company.pdf", IsFolder = false });
+        customers.AddNode(new ReportLibraryNode() { Name = "Balance sheet.pdf" });
+        customers.AddNode(new ReportLibraryNode() { Name = "Revenue by company.pdf" });
 
-        var employees = new ReportLibraryNode() { Name = "Employees", IsFolder = true };
-        employees.AddNode(new ReportLibraryNode() { Name = "Arrival card.pdf", IsFolder = false });
-        employees.AddNode(new ReportLibraryNode() { Name = "Employee comparison.pdf", IsFolder = false });
-        employees.AddNode(new ReportLibraryNode() { Name = "Employee location.pdf", IsFolder = false });
-        employees.AddNode(new ReportLibraryNode() { Name = "Employee performance review.pdf", IsFolder = false });
-        employees.AddNode(new ReportLibraryNode() { Name = "Letter.pdf", IsFolder = false });
+        employees.AddNode(new ReportLibraryNode() { Name = "Arrival card.pdf" });
+        employees.AddNode(new ReportLibraryNode() { Name = "Employee comparison.pdf" });
+        employees.AddNode(new ReportLibraryNode() { Name = "Employee location.pdf" });
+        employees.AddNode(new ReportLibraryNode() { Name = "Employee performance review.pdf" });
+        employees.AddNode(new ReportLibraryNode() { Name = "Letter.pdf" });
 
-        var marketResearch = new ReportLibraryNode() { Name = "Market Research", IsFolder = true };
-        marketResearch.AddNode(new ReportLibraryNode() { Name = "Market share.pdf", IsFolder = false });
-        marketResearch.AddNode(new ReportLibraryNode() { Name = "Polling.pdf", IsFolder = false });
-        marketResearch.AddNode(new ReportLibraryNode() { Name = "Population.pdf", IsFolder = false });
-        marketResearch.AddNode(new ReportLibraryNode() { Name = "Profit and loss.pdf", IsFolder = false });
+        marketResearch.AddNode(new ReportLibraryNode() { Name = "Market share.pdf" });
+        marketResearch.AddNode(new ReportLibraryNode() { Name = "Polling.pdf" });
+        marketResearch.AddNode(new ReportLibraryNode() { Name = "Population.pdf" });
+        marketResearch.AddNode(new ReportLibraryNode() { Name = "Profit and loss.pdf" });
 
-        var products = new ReportLibraryNode() { Name = "Products", IsFolder = true };
-        var barCodes = new ReportLibraryNode() { Name = "Bar Codes", IsFolder = true };
-        barCodes.AddNode(new ReportLibraryNode() { Name = "All product labels.pdf", IsFolder = false });
-        barCodes.AddNode(new ReportLibraryNode() { Name = "Code types.pdf", IsFolder = false });
-        barCodes.AddNode(new ReportLibraryNode() { Name = "Product label.pdf", IsFolder = false });
-        var crossBand = new ReportLibraryNode() { Name = "Cross Band", IsFolder = true };
-        crossBand.AddNode(new ReportLibraryNode() { Name = "Invoice.pdf", IsFolder = false });
-        crossBand.AddNode(new ReportLibraryNode() { Name = "Product list.pdf", IsFolder = false });
-        var realLife = new ReportLibraryNode() { Name = "Real-Life", IsFolder = true };
-        realLife.AddNode(new ReportLibraryNode() { Name = "Restaurant menu.pdf", IsFolder = false });
-        realLife.AddNode(new ReportLibraryNode() { Name = "Roll paper.pdf", IsFolder = false });
+        barCodes.AddNode(new ReportLibraryNode() { Name = "All product labels.pdf" });
+        barCodes.AddNode(new ReportLibraryNode() { Name = "Code types.pdf" });
+        barCodes.AddNode(new ReportLibraryNode() { Name = "Product label.pdf" });
+
+        crossBand.AddNode(new ReportLibraryNode() { Name = "Invoice.pdf" });
+        crossBand.AddNode(new ReportLibraryNode() { Name = "Product list.pdf" });
+
+        realLife.AddNode(new ReportLibraryNode() { Name = "Restaurant menu.pdf" });
+        realLife.AddNode(new ReportLibraryNode() { Name = "Roll paper.pdf" });
+
         products.AddNode(barCodes);
         products.AddNode(crossBand);
         products.AddNode(realLife);
-        products.AddNode(new ReportLibraryNode() { Name = "Sorting products.pdf", IsFolder = false });
+        products.AddNode(new ReportLibraryNode() { Name = "Sorting products.pdf" });
 
-        var sales = new ReportLibraryNode() { Name = "Sales", IsFolder = true };
-        var northwindTraders = new ReportLibraryNode() { Name = "Northwind Traders", IsFolder = true };
-        northwindTraders.AddNode(new ReportLibraryNode() { Name = "Catalog.pdf", IsFolder = false });
-        northwindTraders.AddNode(new ReportLibraryNode() { Name = "Invoice.pdf", IsFolder = false });
-        northwindTraders.AddNode(new ReportLibraryNode() { Name = "Product list.pdf", IsFolder = false });
+        northwindTraders.AddNode(new ReportLibraryNode() { Name = "Catalog.pdf" });
+        northwindTraders.AddNode(new ReportLibraryNode() { Name = "Invoice.pdf" });
+        northwindTraders.AddNode(new ReportLibraryNode() { Name = "Product list.pdf" });
+
         sales.AddNode(northwindTraders);
-        sales.AddNode(new ReportLibraryNode() { Name = "ACME order overview.pdf", IsFolder = false });
-        sales.AddNode(new ReportLibraryNode() { Name = "Multi-table order list.pdf", IsFolder = false });
-        sales.AddNode(new ReportLibraryNode() { Name = "Order details.pdf", IsFolder = false });
-        sales.AddNode(new ReportLibraryNode() { Name = "Single-table order list.pdf", IsFolder = false });
-        sales.AddNode(new ReportLibraryNode() { Name = "Summary by year.pdf", IsFolder = false });
+        sales.AddNode(new ReportLibraryNode() { Name = "ACME order overview.pdf" });
+        sales.AddNode(new ReportLibraryNode() { Name = "Multi-table order list.pdf" });
+        sales.AddNode(new ReportLibraryNode() { Name = "Order details.pdf" });
+        sales.AddNode(new ReportLibraryNode() { Name = "Single-table order list.pdf" });
+        sales.AddNode(new ReportLibraryNode() { Name = "Summary by year.pdf" });
 
         root.AddNode(customers);
         root.AddNode(employees);
@@ -68,28 +73,10 @@ public static class ReportLibraryData {
 }
 
 public class ReportLibraryNode {
-    public static string GetFileName(ReportLibraryNode node) {
-        if(node.IsFolder) return "";
-        var branch = GetPath(node);
-        var path = branch.Select(x => x.Name).Where(x => x != null).ToArray();
-        var fileName = @"Reports\" + string.Join(@"\", path);
-        return fileName;
-
-        static IEnumerable<ReportLibraryNode> GetPath(ReportLibraryNode node) {
-            List<ReportLibraryNode> res = new();
-            var n = node;
-            while (n != null) {
-                res.Add(n);
-                n = n.Parent;
-            }
-            return res.AsEnumerable().Reverse();
-        }
-    }
-
-    public bool IsFolder { get; set; }
     public string Name { get; set; }
 
     public ObservableCollection<ReportLibraryNode> Nodes { get; }
+    
     public ReportLibraryNode Parent { get; private set; }
 
     public ReportLibraryNode() {

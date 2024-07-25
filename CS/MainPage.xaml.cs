@@ -5,8 +5,8 @@ using Microsoft.Maui.Controls;
 
 namespace TreeViewApp; 
 
-public partial class TreeViewPage : ContentPage {
-    public TreeViewPage() {
+public partial class MainPage : ContentPage {
+    public MainPage() {
         InitializeComponent();
     }
 }

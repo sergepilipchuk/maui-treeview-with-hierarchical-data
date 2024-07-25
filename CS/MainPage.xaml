@@ -4,16 +4,15 @@
     xmlns:dx="http://schemas.devexpress.com/maui"
     xmlns:local="clr-namespace:TreeViewWithHierarchicalData"
     BackgroundColor="{dx:ThemeColor Surface}"
-    x:Class="TreeViewApp.TreeViewPage">
+    x:Class="TreeViewApp.MainPage">
 
     <ContentPage.BindingContext>
         <local:TreeViewModel/>
     </ContentPage.BindingContext>
 
-    <Grid RowDefinitions="Auto, *, Auto">
+    <Grid>
         <dx:DXTreeView 
             x:Name="treeView"
-            Grid.Row="1"
             ItemsSource="{Binding Nodes}" 
             DisplayMember="Name"
             AutoExpandMode="RootNodes" >
