@@ -76,8 +76,6 @@ public class ReportLibraryNode {
     public string Name { get; set; }
 
     public ObservableCollection<ReportLibraryNode> Nodes { get; }
-    
-    public ReportLibraryNode Parent { get; private set; }
 
     public ReportLibraryNode() {
         Nodes = new();
@@ -85,6 +83,5 @@ public class ReportLibraryNode {
     
     public void AddNode(ReportLibraryNode node) {
         Nodes.Add(node);
-        node.Parent = this;
     }
 }
